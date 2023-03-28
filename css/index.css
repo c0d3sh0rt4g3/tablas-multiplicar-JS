@@ -1,0 +1,12 @@
+body{
+    background-color: #121212;
+}
+
+#button{
+    border-radius: 5px;
+    background-color: #BB86FC;
+}
+
+#button:hover{
+    background-color: #03DAC6;
+}
