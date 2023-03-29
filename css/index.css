@@ -1,12 +1,19 @@
+@font-face {
+    font-family: 'VampireWars';
+    src: url('../fonts/VampireWars.ttf') format('truetype');
+}
+
 body{
     grid-template-areas:"header header header"
     "sidebarL middle sidebarR"
-    "footer footer foote";
+    "footer footer footer";
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, auto);
-    height: 90vh;
-    background-color: #121212;
+    grid-template-rows: repeat(2, auto);
+    height: 100vh;
+    //background-color: #121212;
+    background-image: url("/img/numeros-de-colores.jpg");
+    font-family: 'VampireWars', serif;
 }
 
 .title{
@@ -14,24 +21,31 @@ body{
     color: #FFFFFF;
     grid-area: header;
     justify-self: center;
-    align-self: center;
-    justify-content: center;
+    //align-self: center;
 }
 
-.inputContainer{
+.buttonNFieldLabel{
     grid-area: middle;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    align-self: center;
+    justify-self: center;
+    height: auto;
+}
+
+#numTextField, #button{
+    height: 20px;
+    border: 2px solid #03DAC6;
+    border-radius: 5px;
+
 }
 
 #button{
-    border-radius: 5px;
     background-color: #BB86FC;
+    border: 0;
 }
 
 #button:hover{
     background-color: #03DAC6;
+    border: 2px solid #BB86FC;
 }
 
 .multiplicationTableContainer{
@@ -42,26 +56,22 @@ body{
     align-items: center;
     justify-self: center;
     align-self: center;
-    background-color: #BB86FC;
+    background-color: rgba(187, 134, 252, 0.68);
     height: 265px;
     width: 245px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     border-radius: 15px;
 }
 
 #multiplicationTable{
     display: grid;
-    grid-template-areas: "numcol1 signcol numcol2 equalcol resultcol";
     grid-template-columns: repeat(5, 1fr);
     height: 200px;
     width: 200px;
-    justify-content: center;
-    align-items: center;
 }
 
-.tabla-elemento {
+.tableElement {
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-area: auto; /* Colocamos cada elemento en una posición automática de la rejilla */
 }

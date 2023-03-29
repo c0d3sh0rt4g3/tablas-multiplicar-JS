@@ -1,26 +1,27 @@
 let givenNum = 0
 function checkNum(){
-    givenNum = parseFloat(document.getElementById("num").value)
+    givenNum = parseFloat(document.getElementById("numTextField").value)
     if (givenNum){
-        if (givenNum % 1 === 0){
-            if (givenNum >= 0){
-                multiplicationTables(givenNum)
-            }else {alert("The number introduced it's not positive.")}
-        }else{alert("The number introduced is not an integer.")}
+        if (givenNum.toString().length <=5){
+            if (givenNum % 1 === 0){
+                if (givenNum >= 0){
+                    multiplicationTables(givenNum)
+                }else {alert("The number introduced it's not positive.")}
+            }else{alert("The number introduced is not an integer.")}
+        }else{alert("The maximum legnth accepted of the number introduced would be 5.")}
     }else {alert("You didn't introduced a number.")}
 }
 
-function multiplicationTables(givenNum){
-    let tabla = document.getElementById("multiplicationTable");
-    tabla.innerHTML = ""; // Limpiamos la tabla antes de generar una nueva
-
+function multiplicationTables(){
+    let table = document.getElementById("multiplicationTable");
     document.getElementById("tableTitle").textContent = `Tabla del ${givenNum}`
+    table.innerHTML = "";
     for(let i = 0; i < 11; i++){
-        tabla.innerHTML += `<div class="tabla-elemento">${givenNum}</div>
-                             <div class="tabla-elemento">*</div>
-                             <div class="tabla-elemento">${i}</div>
-                             <div class="tabla-elemento"> = </div>
-                             <div class="tabla-elemento">${givenNum * i}</div>`;
+        table.innerHTML += `<div class="tableElement">${givenNum}</div>
+                             <div class="tableElement">*</div>
+                             <div class="tableElement">${i}</div>
+                             <div class="tableElement"> = </div>
+                             <div class="tableElement">${givenNum * i}</div>`
     }
 }
 
