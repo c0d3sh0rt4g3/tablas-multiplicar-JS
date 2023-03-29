@@ -1,5 +1,28 @@
 body{
+    grid-template-areas:"header header header"
+    "sidebarL middle sidebarR"
+    "footer footer foote";
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    height: 90vh;
     background-color: #121212;
+}
+
+.title{
+    font-weight: bolder;
+    color: #FFFFFF;
+    grid-area: header;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+}
+
+.inputContainer{
+    grid-area: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #button{
@@ -9,4 +32,36 @@ body{
 
 #button:hover{
     background-color: #03DAC6;
+}
+
+.multiplicationTableContainer{
+    grid-area: sidebarR;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+    background-color: #BB86FC;
+    height: 265px;
+    width: 245px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+}
+
+#multiplicationTable{
+    display: grid;
+    grid-template-areas: "numcol1 signcol numcol2 equalcol resultcol";
+    grid-template-columns: repeat(5, 1fr);
+    height: 200px;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabla-elemento {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: auto; /* Colocamos cada elemento en una posición automática de la rejilla */
 }

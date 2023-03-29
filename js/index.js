@@ -10,8 +10,19 @@ function checkNum(){
     }else {alert("You didn't introduced a number.")}
 }
 
-function multiplicationTables(){
+function multiplicationTables(givenNum){
+    let tabla = document.getElementById("multiplicationTable");
+    tabla.innerHTML = ""; // Limpiamos la tabla antes de generar una nueva
+
+    document.getElementById("tableTitle").textContent = `Tabla del ${givenNum}`
     for(let i = 0; i < 11; i++){
-        document.write(givenNum + " * " + i + " = " + givenNum * i + "<br>")
+        tabla.innerHTML += `<div class="tabla-elemento">${givenNum}</div>
+                             <div class="tabla-elemento">*</div>
+                             <div class="tabla-elemento">${i}</div>
+                             <div class="tabla-elemento"> = </div>
+                             <div class="tabla-elemento">${givenNum * i}</div>`;
     }
 }
+
+
+
